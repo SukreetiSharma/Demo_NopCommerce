@@ -1,10 +1,20 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Cases" verbose="1" >
+    <listeners>
+        <listener class-name="DemoNopCommerce.Reports.Listener"/>
+    </listeners>
     <test name="Verify User is able to add product">
-        <parameter name="browserName" value="chrome"></parameter>
+        <parameter name="browserName" value="chrome"/>
         <parameter name="testRunId" value="TC-1"/>
         <classes>
             <class name="DemoNopCommerce.Tests.TestAddProduct"/>
+        </classes>
+    </test>
+    <test name="Verify User is able to add product to cart">
+        <parameter name="browserName" value="chrome"/>
+        <parameter name="testRunId" value="TC-2"/>
+        <classes>
+            <class name="DemoNopCommerce.Tests.TestAddToCart"/>
         </classes>
     </test>
 </suite>

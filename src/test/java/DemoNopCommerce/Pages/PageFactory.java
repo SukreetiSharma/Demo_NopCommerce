@@ -4,17 +4,22 @@ import org.openqa.selenium.WebDriver;
 
 public class PageFactory {
     WebDriver driver;
-    private AddProductToCard addproduct;
+    private AddProductToCard addProduct;
+    private AddToCart addToCart;
 
     public PageFactory(WebDriver driver){
         this.driver = driver;
     }
     public AddProductToCard getAddProduct(){
-        if(addproduct == null){
-            addproduct = new AddProductToCard(driver);
+        if(addProduct == null){
+            addProduct = new AddProductToCard(driver);
         }
-        return addproduct;
+        return addProduct;
     }
-
-
+    public AddToCart getAddToCart(){
+        if(addToCart == null){
+            addToCart = new AddToCart(driver);
+        }
+        return addToCart;
+    }
 }
